@@ -1,0 +1,469 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Dosis", sans-serif;
+  color: rgba(0, 0, 0, 0.863);
+  background-color: rgb(218, 192, 192);
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* This hides any horizontal overflow */
+}
+html{
+  scroll-behavior: smooth;
+  }
+*{
+  box-sizing: border-box;
+}
+header{
+    background: url(./main\ photo.jpg);
+    background-size:cover;
+    height: 90vh;
+    width: 100%;
+    background-position: center;
+    filter: brightness(0.7);
+    object-fit: cover;
+    overflow: hidden;
+    position: relative;
+}
+/* Media query for small screens */
+@media only screen and (max-width: 768px) {
+    header {
+      background-size: 100% 100%; /* Scale the image to cover the entire container on small screens */
+    }
+  }
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    color:  #971105;
+    font-size: 100px;
+    justify-content: center;
+    align-items: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#logo{
+  top: 3px;
+  left: 3px;
+  height: 8vh;
+  width: 5vw;
+}
+ul{
+    list-style: none;  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin-right: 150px;
+}
+.items{
+    display: flex;
+    justify-content:  space-between;
+    align-items: center;
+    gap: 1.5vw;
+}
+.items a{
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+    transition: 0.3s;
+    color: #b43125;
+}
+.items li::before{
+    content: '';
+    width: 0;
+    height: 2px;
+    margin: auto;
+    transition: 0.5s;
+    background: #971105;
+    display: block;
+}
+.items li:hover::before{
+    width: 100%;
+}
+/* Media query to hide the nav bar when screen width is less than 768px */
+@media (max-width: 768px) {
+    .navitems {
+      display: none;
+    }
+  }
+.bottom-right{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  position: absolute;
+  color: #aa2f23;
+  font-size: 5rem;    
+  bottom: 5px;
+  letter-spacing: 1.5px;
+  right: 10px;
+  text-align: left;
+  padding: 0 5px; /* Add padding to ensure text is not too close to edges */
+  max-width: 90%; /* Prevent text from overflowing outside the header */;
+  z-index: 10;
+}
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .bottom-right {
+      font-size: 4vw; /* Reduce text size on smaller screens */
+      right: 5px; /* Adjust position for smaller screens */
+      bottom: 5px;
+  }
+
+  header {
+    height: auto; /* Optional: Let content determine height on smaller screens */
+    padding: 20px; /* Adjust padding for smaller screens */
+}
+}
+.sign{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: center;
+    margin: 10px;
+    align-items: center;
+    width: 100%;
+}
+.boo{
+  font-family: "Qwitcher Grypen", system-ui;
+    text-align: center;
+    justify-content: center;
+    letter-spacing: 2px;
+    word-spacing: 3%;
+    align-items: center;
+    width: 45%;
+    font-size: 65px;
+    padding: 0 7px;
+    text-decoration: underline;
+    color: #3a1b1b;
+    margin-bottom: 0;
+
+}
+.para{
+  font-family: "Dancing Script", cursive;
+    font-size: 3vw;
+    display: flex;
+    text-align: justify;
+    padding: 10px;
+    padding-top: 0;
+    color: #3a1b1b;
+
+}
+.boos{
+    font-size: 25px;
+    width: 45%;
+    height: 70%;
+    align-items: center;
+    justify-content: center;
+    word-spacing: normal;
+    padding: 0 20px;
+    margin: 5px;
+
+}
+.menu{
+    text-align: center;
+
+}
+.menu h3{
+  font-family: "Dancing Script", cursive;
+  font-size: 27px;
+  color: #3a1b1b;
+}
+.images {
+  margin-top: 20px;
+  width: 12vw;
+  height: 22vh;
+  border: 2px solid rgb(201, 164, 164);;
+  border-radius: 5px;
+  object-fit: cover;
+  transition: opacity 0.5s ease; /*smooth fading transition*/
+}
+
+.desc{
+    width: 10vw;
+    font-size: 25px;
+}
+/* Apply hover effect to all items */
+.menu .item1, .menu .item2, .menu .item3, .menu .item4, .menu .item5, .menu .item6 {
+  position: relative; /* Required to position the overlay absolutely */
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(228, 178, 178, 0.7); /*semi-transparent*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.5s ease; /* Smooth fade-in transition */
+}
+
+.add-to-cart-btn {
+  padding: 10px 20px;
+  background-color: #b44848;
+  color: #e7dede;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.5s ease; /* Smooth fade-in transition */
+}
+/* Hover effect: Image fades out, overlay and button fade in */
+.menu .item1:hover .images,
+.menu .item2:hover .images,
+.menu .item3:hover .images,
+.menu .item4:hover .images,
+.menu .item5:hover .images,
+.menu .item6:hover .images {
+  opacity: 0.3; /* Fade out the image */
+}
+
+.menu .item1:hover .overlay,
+.menu .item2:hover .overlay,
+.menu .item3:hover .overlay,
+.menu .item4:hover .overlay,
+.menu .item5:hover .overlay,
+.menu .item6:hover .overlay {
+  opacity: 1; /* Fade in the overlay */
+}
+
+.menu .item1:hover .add-to-cart-btn,
+.menu .item2:hover .add-to-cart-btn,
+.menu .item3:hover .add-to-cart-btn,
+.menu .item4:hover .add-to-cart-btn,
+.menu .item5:hover .add-to-cart-btn,
+.menu .item6:hover .add-to-cart-btn {
+  opacity: 1; /* Fade in the add-to-cart button */
+}
+#cookies, #cupcakes, #cakes, #cheesecakes {
+  font-family: "Qwitcher Grypen", system-ui;
+  font-size: 65px;
+  text-align: center;
+  padding: 0 15px;
+  margin: 20px 5px;
+  width: 100%;
+  display: block;
+  color: #3a1b1b;
+  text-decoration: underline;
+}
+  .cookies, .cupcakes, .cakes, .cheesecakes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 18px;
+    margin: 1px;
+  }
+
+/* Media Query for Screens Below 1094px */
+@media (max-width: 1094px) {
+  .cookies, .cupcakes, .cakes, .cheesecakes {
+      display: flex;
+      flex-direction: column; /* Stack items vertically by default */
+      gap: 20px; /* Space between menu items */
+  }
+
+  /* Individual items (item1, item2, etc.) should align image and text in a row */
+  .cookies .item1, .cookies .item2, .cookies .item3, .cookies .item4, .cookies .item5, .cookies .item6,
+  .cupcakes .item1, .cupcakes .item2, .cupcakes .item3,
+  .cakes .item1, .cakes .item2, .cakes .item3,
+  .cheesecakes .item1, .cheesecakes .item2, .cheesecakes .item3 {
+      display: flex;
+      flex-direction: row; /* Ensure image and text are side by side */
+      align-items: flex-start; /* Align items to the top */
+      gap: 20px; /* Space between image and text */
+      width: 100%; /* Full width */
+  }
+
+  .menu img {
+      width: 40%; /* Image takes up 40% of the width */
+      height: auto; /* Maintain aspect ratio */
+      margin-right: 10px; /* Space between the image and text */
+  }
+
+  /* Adjust text container */
+  .item1 .text, .item2 .text, .item3 .text,
+  .item4 .text, .item5 .text, .item6 .text {
+      display: flex;
+      flex-direction: column; /* Stack h3 and p vertically */
+      justify-content: flex-start; /* Align at the start */
+      width: 60%; /* Allow it to take the remaining space */
+  }
+
+  .item1 h3, .item2 h3, .item3 h3,
+  .item4 h3, .item5 h3, .item6 h3 {
+      margin: 0; /* Remove margin for better alignment */
+      font-size: 1.5rem; /* Adjust font size if needed */
+  }
+
+  .item1 p, .item2 p, .item3 p,
+  .item4 p, .item5 p, .item6 p {
+      margin: 5px 0 0 0; /* Add some space above the description */
+      width: 100%; /* Allow p to take the full width of the text container */
+      font-size: 1rem; /* Set font size for descriptions */
+  }
+
+  /* Center the headings like 'Cookies', 'Cupcakes', etc. */
+  #cookies, #cupcakes, #cakes, #cheesecakes {
+      text-align: center;
+      font-size: 3.5rem; /* Adjust heading size for smaller screens */
+  }
+
+.menu {
+  text-align: center;
+  margin-top: 40px; /* Add margin to the top of the menu */
+}
+
+.cookies {
+  margin-top: 40px; /* Add margin to separate it from the previous section */
+}
+}
+@media (max-width: 768px) {
+  .menu {
+      margin-top: 20px; /* Adjust margin for smaller screens */
+  }
+
+  .cookies {
+      margin-top: 20px; /* Ensure space below for smaller screens */
+  }
+  .welcome{
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+  }
+  .welcome .sign{
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+.welcome{
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+.pricing-options p {
+  margin: 10px 0;
+}
+
+.pricing-options button {
+  padding: 10px 15px;
+  background-color: #b44147; /* Gold color for buttons */
+  border: none;
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.pricing-options button:hover {
+  background-color: #8d3333; /* Slightly darker on hover */
+}
+.cart-container {
+  position: fixed;
+  text-align: right;
+  padding: 10px;
+  z-index: 1000;
+  top: 10px;
+  right: 20px;
+}
+
+.cart-btn {
+  background-color: #ff6f61;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+#cart {
+  position: fixed;
+  top: 50px;
+  right: 20px;
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#cart-items {
+  list-style: none;
+  padding: 0;
+}
+
+#cart-items li {
+  margin-bottom: 10px;
+}
+footer {
+  background-color: rgb(218, 192, 192); /* Dark background color */
+  color: rgba(0, 0, 0, 0.863); /* White text */
+  padding: 20px 0; /* Vertical padding */
+  text-align: center; /* Center align text */
+  border-top: 1px solid rgba(0, 0, 0, 0.863);
+}
+
+.footer-container {
+  display: flex; /* Flexbox for layout */
+  justify-content: space-around; /* Space between items */
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.footer-content {
+  margin: 10px; /* Margin around footer content */
+}
+
+.footer-content h3 {
+  margin-bottom: 10px; /* Spacing below headings */
+}
+
+.footer-content p,
+.footer-content a {
+  color: rgba(0, 0, 0, 0.863); /* White text for paragraphs and links */
+  text-decoration: none; /* Remove underline from links */
+}
+
+.footer-content a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+.social-media,
+.quick-links {
+  list-style-type: none; /* Remove bullets from lists */
+  padding: 0; /* Remove padding */
+  margin: 0;
+  flex-direction: column;
+}
+.social-media li,
+.quick-links li {
+  margin-bottom: 8px;
+  display: block;
+}
+.footer-bottom {
+  margin-top: 20px; /* Space above the bottom section */
+  font-size: 0.9rem; /* Smaller font size for copyright */
+  border-top: 1px solid rgba(0, 0, 0, 0.863); /* Top border for separation */
+  padding-top: 10px; /* Space above the copyright text */
+}
+#scrollToTopBtn {
+  position: fixed;
+  bottom: 20px; 
+  right: 30px;
+  display: none;
+  background-color: #b44848; 
+  color: white; 
+  border: none; 
+  border-radius: 5px; 
+  padding: 10px; 
+  cursor: pointer; 
+  font-size: 16px; 
+  z-index: 1000; /* Ensure it stays on top of other content */
+}
+
+#scrollToTopBtn:hover {
+  background-color: #8d3333;
+}

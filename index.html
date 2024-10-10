@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MNHA's bakery</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Dosis:wght@200..800&family=Qwitcher+Grypen:wght@400;700&display=swap');
+    </style>
+</head>
+
+<body>
+    <header class="home" id="home">
+        <div class="nav">
+            <div class="logo">
+                <img id="logo" src= "./shop_city_and_architecture_bakery_baker_icon_251528.png" alt="logo">
+                <span>MNHA's Bakery</span>
+            </div>
+            <ul class="navitems">
+                <div class="items">
+                    <li><a href="#boo">AboutUs</a></li>
+                    <li><a href="#cookies">Cookies</a></li>
+                    <li><a href="#cupcakes">Cupcakes</a></li>
+                    <li><a href="#cakes">Cakes</a></li>
+                    <li><a href="#cheesecakes">Cheesecakes</a></li>
+                </div>
+            </ul>
+        </div>
+        <section class="text">
+
+            <h4 class="bottom-right">Fresh & sweet <br> desserts </h4>
+        </section>
+    </header>
+
+    <div class="cart-container">
+        <button class="cart-btn" onclick="showCart()">🛒 Cart (<span id="cart-count">0</span>)</button>
+    </div>
+
+    <!-- Cart Section (initially hidden) -->
+    <div id="cart" style="display: none;">
+        <h2>Your Cart</h2>
+        <ul id="cart-items"></ul>
+        <button onclick="clearCart()">Clear Cart</button>
+        <button onclick="viewCart()">View Cart</button>
+    </div>
+    <section class="welcome">
+        <div class="sign">
+            <h2 class="boo" id="boo">About Us</h2>
+            <h3 class="para">Welcome to MNHA's Bakery.</h3>
+            <p class="boos">Welcome to our bakery, where sweet dreams come to life! Indulge in a delightful selection of
+                handcrafted treats, including our rich and creamy cheesecakes, soft and chewy cookies, decadent cakes,
+                and fluffy cupcakes. Each creation is made with the finest ingredients and a dash of love, ensuring
+                every bite is a heavenly experience. Whether you’re celebrating a special occasion or simply treating
+                yourself, our bakery is your go-to destination for delicious confections that will satisfy your sweet
+                tooth and warm your heart. Come taste the magic today!</p>
+        </div>
+    </section>
+    <div class="menu"  id="menu">
+
+        <div class="cookies">
+            <h2 id="cookies">Cookies</h2>
+            <div class="item1">
+                <img class="images" src="./red cookies.jpg" alt="red velvet cookies">
+                <div class="overlay">
+                    <button class="add-to-cart-btn" onclick="showOptions('cookies-options-1')">Add to Cart</button>
+                    <!-- Hidden pricing options -->
+                    <div class="pricing-options" id="cookies-options-1" style="display: none;">
+                        <p><button onclick="addToCart('1 Cookie', 1.70)">$1.70 - 1 Cookie</button></p>
+                        <p><button onclick="addToCart('6 Cookies', 10.00)">$10 - 6 Cookies</button></p>
+                        <p><button onclick="addToCart('12 Cookies', 20.00)">$20 - 12 Cookies</button></p>
+                    </div>
+                </div>
+                <h3>Redvelvet Cookies</h3>
+                <p class="desc">Soft and chewy with a rich cocoa flavor, topped with a sweet cream cheese drizzle.</p>
+            </div>
+            <div class="item2">
+                <img class="images" src="./buttercrunch-toffee-cookies_1x1-2668.jpg" alt="buttercrunch-toffee cookies">
+                <div class="overlay">
+                    <button class="add-to-cart-btn" onclick="showOptions('cookies-options-2')">Add to Cart</button>
+                    <!-- Hidden pricing options -->
+                    <div class="pricing-options" id="cookies-options-2" style="display: none;">
+                        <p><button onclick="addToCart('1 Cookie', 1.70)">$1.70 - 1 Cookie</button></p>
+                        <p><button onclick="addToCart('6 Cookies', 10.00)">$10 - 6 Cookies</button></p>
+                        <p><button onclick="addToCart('12 Cookies', 20.00)">$20 - 12 Cookies</button></p>
+                    </div>
+                </div>
+                <h3>Butter Crunch Coffee Cookies</h3>
+                <p class="desc">Buttery, crisp, and packed with bits of crunchy toffee for a sweet, caramelized bite.
+                </p>
+            </div>
+            <div class="item3">
+                <img class="images" src="./choco cookies.webp" alt=" cookies">
+                <div class="overlay">
+                    <button class="add-to-cart-btn" onclick="showOptions('cookies-options-3')">Add to Cart</button>
+                    <!-- Hidden pricing options -->
+                    <div class="pricing-options" id="cookies-options-3" style="display: none;">
+                        <p><button onclick="addToCart('1 Cookie', 1.70)">$1.70 - 1 Cookie</button></p>
+                        <p><button onclick="addToCart('6 Cookies', 10.00)">$10 - 6 Cookies</button></p>
+                        <p><button onclick="addToCart('12 Cookies', 20.00)">$20 - 12 Cookies</button></p>
+                    </div>
+                </div>
+                <h3>Chocolate Fudge Cookies</h3>
+                <p class="desc"> Dense and fudgy with an intense chocolate flavor filling your mouth with every
+                    indulgent bite.</p>
+            </div>
+            <div class="item4">
+                <img class="images" src="./caramel crunch cookies.jpg" alt="caramel crunch cookies">
+                <div class="overlay">
+                    <button class="add-to-cart-btn" onclick="showOptions('cookies-options-4')">Add to Cart</button>
+                    <!-- Hidden pricing options -->
+                    <div class="pricing-options" id="cookies-options-4" style="display: none;">
+                        <p><button onclick="addToCart('1 Cookie', 1.70)">$1.70 - 1 Cookie</button></p>
+                        <p><button onclick="addToCart('6 Cookies', 10.00)">$10 - 6 Cookies</button></p>
+                        <p><button onclick="addToCart('12 Cookies', 20.00)">$20 - 12 Cookies</button></p>
+                    </div>
+                </div>
+                <h3>Caramel Crunch Cookies</h3>
+                <p class="desc"> Delightfully soft with a golden caramel flavor, complemented by a satisfying crunch in
+                    every bite.</p>
+            </div>
+            <div class="item5">
+                <img class="images" src="./mare_almond_crunch_cookies_h.webp" alt="almond cookies">
+                <div class="overlay">
+                    <button class="add-to-cart-btn" onclick="showOptions('cookies-options-5')">Add to Cart</button>
+                    <!-- Hidden pricing options -->
+                    <div class="pricing-options" id="cookies-options-5" style="display: none;">
+                        <p><button onclick="addToCart('1 Cookie', 1.70)">$1.70 - 1 Cookie</button></p>
+                        <p><button onclick="addToCart('6 Cookies', 10.00)">$10 - 6 Cookies</button></p>
+                        <p><button onclick="addToCart('12 Cookies', 20.00)">$20 - 12 Cookies</button></p>
+                    </div>
+                </div>
+                <h3>Almond Crunch Cookies</h3>
+                <p class="desc">Nutty and crunchy, loaded with toasted almonds for a perfect balance of sweet and
+                    savory.</p>
+            </div>
+            <div class="item6">
+                <img class="images" src="./chocolate-crunch-cookies-recipe.jpg" alt="choco crunch cookies">
+                <div class="overlay">
+                    <button class="add-to-cart-btn" onclick="showOptions('cookies-options-6')">Add to Cart</button>
+                    <!-- Hidden pricing options -->
+                    <div class="pricing-options" id="cookies-options-6" style="display: none;">
+                        <p><button onclick="addToCart('1 Cookie', 1.70)">$1.70 - 1 Cookie</button></p>
+                        <p><button onclick="addToCart('6 Cookies', 10.00)">$10 - 6 Cookies</button></p>
+                        <p><button onclick="addToCart('12 Cookies', 20.00)">$20 - 12 Cookies</button></p>
+                    </div>
+                </div>
+                <h3>Chocolate Crunch Cookies</h3>
+                <p class="desc">Rich chocolate cookies with a crispy, crunchy texture, perfect for chocolate lovers who
+                    crave a little extra bite.</p>
+            </div>
+        </div>
+        <div class="cupcakes">
+            <h2 id="cupcakes">Cupcakes</h2>
+            <div class="item1">
+                <img class="images" src="./chocolate-cupcakes-SQUARE.webp" alt="choco cupcakes">
+                <div class="overlay">
+                    <button class="add-to-cart-btn" onclick="showOptions('cupcakes-options-1')">Add to Cart</button>
+                    <!-- Hidden pricing options -->
+                    <div class="pricing-options" id="cupcakes-options-1" style="display: none;">
+                        <p><button onclick="addToCart('1 Cupcake', 2.00)">$2.00 - 1 Cupcake</button></p>
+                        <p><button onclick="addToCart('6 Cupcakes', 11.00)">$11.00 - 6 Cupcakes</button></p>
+                        <p><button onclick="addToCart('12 Cupcakes', 21.00)">$21.00 - 12 Cupcakes</button></p>
+                    </div>
+                </div>
+                <h3>Chocolate Cupcakes</h3>
+                <p class="desc">Moist and rich chocolate cupcakes topped with a smooth, creamy chocolate frosting,
+                    perfect for any chocolate lover.</p>
+            </div>
+            <div class="item2">
+                <img class="images" src="./homemade-vanilla-cupcakes-with-vanilla-buttercream.jpg" alt="choco cupcakes">
+                <div class="overlay">
+                    <button class="add-to-cart-btn" onclick="showOptions('cupcakes-options-2')">Add to Cart</button>
+                    <!-- Hidden pricing options -->
+                    <div class="pricing-options" id="cupcakes-options-2" style="display: none;">
+                        <p><button onclick="addToCart('1 Cupcake', 2.00)">$2.00 - 1 Cupcake</button></p>
+                        <p><button onclick="addToCart('6 Cupcakes', 11.00)">$11.00 - 6 Cupcakes</button></p>
+                        <p><button onclick="addToCart('12 Cupcakes', 21.00)">$21.00 - 12 Cupcakes</button></p>
+                    </div>
+                </div>
+                <h3>Vanilla Cupcakes</h3>
+                <p class="desc"> Classic, fluffy vanilla cupcakes crowned with a light, velvety vanilla buttercream for
+                    a timeless treat.
+                </p>
+            </div>
+            <div class="item3">
+                <img class="images" src="./red cupcakes.jpg" alt="red cupcakes">
+                <div class="overlay">
+                    <button class="add-to-cart-btn" onclick="showOptions('cupcakes-options-3')">Add to Cart</button>
+                    <!-- Hidden pricing options -->
+                    <div class="pricing-options" id="cupcakes-options-3" style="display: none;">
+                        <p><button onclick="addToCart('1 Cupcake', 2.00)">$2.00 - 1 Cupcake</button></p>
+                        <p><button onclick="addToCart('6 Cupcakes', 11.00)">$11.00 - 6 Cupcakes</button></p>
+                        <p><button onclick="addToCart('12 Cupcakes', 21.00)">$21.00 - 12 Cupcakes</button></p>
+                    </div>
+                </div>
+                <h3>Redvelvet Cupcakes</h3>
+                <p class="desc">Soft, luxurious red velvet cupcakes with a hint of cocoa, finished with a creamy, tangy
+                    cream cheese frosting.</p>
+            </div>
+        </div>
+        <div class="cakes">
+            <h2 id="cakes">Cakes</h2>
+            <div class="item1">
+                <img class="images" src="./lemington cake.jpg" alt="Lamington Cake">
+                <div class="overlay">
+                    <button class="add-to-cart-btn" onclick="addToCart('Lamington Cake', 35.00)">Add to Cart</button>
+                    <div class="pricing-options" id="cakes-options-1" style="display: none;">
+                        <p><button>$2.00 - 1 Cupcake</button></p>
+                        <p><button>$11.00 - 6 Cupcakes</button></p>
+                        <p><button></button></p>
+                    </div>
+                </div>
+                <h3>Lamington Cake</h3>
+                <p class="desc">Light and fluffy sponge cake squares dipped in rich chocolate and rolled in desiccated
+                    coconut, a classic Australian treat.</p>
+            </div>
+            <div class="item2">
+                <img class="images" src="./lava cake.jpg" alt="lavacake">
+                <div class="overlay">
+                    <button class="add-to-cart-btn" onclick="addToCart('Lava Cake', 20.00)">Add to Cart</button>
+                </div>
+                <h3>Lava Cake</h3>
+                <p class="desc">Decadent chocolate cake with a molten, gooey chocolate center that oozes out with every
+                    bite, creating a rich, indulgent experience.</p>
+            </div>
+            <div class="item3">
+                <img class="images" src="./redvelvet cake.jpg" alt="redvelvet cake">
+                <div class="overlay">
+                    <button class="add-to-cart-btn" onclick="addToCart('Redvelvet Cake', 40.00)">Add to Cart</button>
+                </div>
+                <h3>Redvelvet Cake</h3>
+                <p class="desc">Moist and velvety with a hint of cocoa, layered with smooth cream cheese frosting for
+                    the perfect blend of flavor and texture.</p>
+            </div>
+        </div>
+        <div class="cheesecakes">
+            <h2 id="cheesecakes">Cheesecakes</h2>
+            <div class="item1">
+                <img class="images" src="./berry cheesecake.webp" alt="berry cheese">
+                <div class="overlay">
+                    <button class="add-to-cart-btn" onclick="addToCart('Strawberry Cheesecake', 30.00)">Add to
+                        Cart</button>
+                </div>
+                <h3>Strawberry Cheesecake</h3>
+                <p class="desc">Creamy, rich cheesecake topped with fresh, juicy strawberries and a sweet strawberry
+                    glaze for a refreshing fruity twist</p>
+            </div>
+            <div class="item2">
+                <img class="images" src="./lotus biscoff cheesecake.jpeg" alt="lotcheese">
+                <div class="overlay">
+                    <button class="add-to-cart-btn" onclick="addToCart('Lotus Cheesecake',  35.00)">Add to Cart</button>
+                    '
+                </div>
+                <h3>Lotus Cheesecake</h3>
+                <p class="desc">Smooth cheesecake infused with the distinct caramelized flavor of Lotus Biscoff, topped
+                    with a crunchy Lotus biscuit crust.</p>
+            </div>
+            <div class="item3">
+                <img class="images" src="./rasberry cheesecake.jpg" alt="raspberry">
+                <div class="overlay">
+                    <button class="add-to-cart-btn" onclick="addToCart('Raspberry Cheesecake',  32.00)">Add to
+                        Cart</button>
+
+                </div>
+                <h3>Raspberry Cheesecake</h3>
+                <p class="desc"> Silky cheesecake with a vibrant raspberry swirl and fresh raspberries on top, offering
+                    the perfect balance of sweet and tart.
+                </p>
+            </div>
+        </div>
+    </div>
+    <button id="scrollToTopBtn" title="Go to top">↑</button>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <h3>Contact Us</h3>
+                <p>Email: info@example.com</p>
+                <p>Phone: +1 234 567 890</p>
+            </div>
+            <div class="footer-content">
+                <h3>Follow Us</h3>
+                <ul class="social-media">
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+            <div class="footer-content">
+                <h3>Quick Links</h3>
+                <ul class="quick-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#boo">About Us</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 MNHA's Bakery. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
